@@ -17,7 +17,10 @@ const downloadAudio = (videoId) => {
         console.log(JSON.stringify(data.toString()))
 });
 
-    console.log(fileName)
+yt.stderr.on("data", (data) => {
+    console.error(data.toString());
+});
+
 
     yt.on("close", (code) => {
       if (code === 0) {
